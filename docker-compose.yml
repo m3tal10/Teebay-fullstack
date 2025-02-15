@@ -7,6 +7,7 @@ services:
       - backend
     volumes:
     - ./Teebay-FE:/app
+    - /app/node_modules
   backend:
     build: ./Teebay-BE
     ports:
@@ -16,6 +17,7 @@ services:
         condition: service_healthy
     volumes:
     - ./Teebay-BE:/app
+    - /app/node_modules
   db:
     image: postgres:latest
     ports:
