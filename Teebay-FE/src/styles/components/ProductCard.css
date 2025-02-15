@@ -1,0 +1,77 @@
+.product-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 16px;
+  background: white;
+  max-width: 800px;
+}
+
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+}
+
+.product-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  color: #333;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  color: #666;
+}
+
+.delete-btn:hover {
+  color: #333;
+}
+
+.product-categories {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.product-pricing {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.product-description {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0 0 16px 0;
+}
+
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 14px;
+}
+
+.date-posted,
+.view-count {
+  color: #888;
+}
+
+/* Example usage of the component */
+.products-container {
+  padding: 24px;
+}
+
+.products-title {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+}
