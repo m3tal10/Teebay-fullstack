@@ -1,13 +1,14 @@
 import { useForm } from "react-hook-form";
 
-import "../styles/SignUp.css";
-import { Link, useNavigate } from "react-router";
+import "../styles/Signup.css";
+import { Link, useLocation, useNavigate } from "react-router";
 import { SIGN_UP } from "../graphQl/mutations";
 import { useMutation } from "@apollo/client";
 import { toast } from "react-toastify";
 
 const SignUp = () => {
-  const navigation = useNavigate();
+  const navigate = useNavigate();
+  const location = useLocation()
   const {
     register,
     handleSubmit,
@@ -31,6 +32,7 @@ const SignUp = () => {
       if (response.data?.signup?.token) {
         localStorage.setItem("token", response.data.signup.token);
       }
+      navigate("/", { replace: true, state: { from: location } });
       toast.success("Signed up successfully.");
     } catch (err) {
       console.log(err);

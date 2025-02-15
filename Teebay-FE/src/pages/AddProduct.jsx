@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import Select from "react-select";
-import "../styles/addProduct.css";
+import "../styles/AddProduct.css";
 import { CREATE_PRODUCT } from "../graphQl/mutations";
 import { useMutation } from "@apollo/client";
 import { useLocation, useNavigate } from "react-router-dom";

@@ -1,4 +1,4 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import "../styles/components/Navbar.css";
 import Button from "./Button";
 import { toast } from "react-toastify";
@@ -6,6 +6,7 @@ import { useApolloClient } from "@apollo/client";
 
 function Navbar() {
   const navigate = useNavigate();
+  const location = useLocation()
   const client = useApolloClient();
   const handleLogOut = async () => {
     try {
@@ -14,9 +15,9 @@ function Navbar() {
       // Clear Apollo cache completely
       await client.clearStore();
       // Redirect user to login page
-      navigate("/login");
+      navigate("/login", { replace: true, state: { from: location } });
     } catch (error) {
-      console.error("Logout failed:", error);
+      toast.error("Logout failed.",);
     }
   };
   return (
