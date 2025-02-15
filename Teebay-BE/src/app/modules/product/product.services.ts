@@ -6,6 +6,7 @@ import authenticateUser from '../../../helpers/authenticateUser';
 const getAllProductsFromDB = async (context: any) => {
   // helper function to authenticate user or throw error...
   const user = context.user;
+
   authenticateUser(user);
   const products = await prisma.product.findMany({
     where: {

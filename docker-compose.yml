@@ -5,6 +5,8 @@ services:
       - "5173:5173"
     depends_on:
       - backend
+    volumes:
+    - ./Teebay-FE:/app
   backend:
     build: ./Teebay-BE
     ports:
@@ -12,6 +14,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+    volumes:
+    - ./Teebay-BE:/app
   db:
     image: postgres:latest
     ports:

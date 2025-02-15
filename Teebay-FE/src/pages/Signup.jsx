@@ -32,7 +32,7 @@ const SignUp = () => {
       if (response.data?.signup?.token) {
         localStorage.setItem("token", response.data.signup.token);
       }
-      navigate("/", { replace: true, state: { from: location } });
+      navigate("/login", { replace: true, state: { from: location } });
       toast.success("Signed up successfully.");
     } catch (err) {
       console.log(err);
